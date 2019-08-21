@@ -8,30 +8,65 @@ Disclaimer: this repository is intended to be used under Linux (it was tested in
 
 ### CUnit
 
-### 
-
+From the CUnit documentation, "CUnit is a lightweight system for writing, administering, and running unit tests in C.". You can find all relevant information in the home page of the project: http://cunit.sourceforge.net/
 
 ## Pre-requisites
 
-First, you will need to install the CUnit libraries:
+* You will need to install the CUnit libraries:
 
-```bash
-sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
-```
+    ```bash
+    sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev
+    ```
+
+* You will need to install lcov package:
+
+    ```bash
+    sudo apt-get install lcov
+    ```
+
+* You will need to have gcc installed
 
 ## Folder structure
 
+```
 +-- .
 |  +-- bin
+|    +-- <compiled files>
 |  +-- doc
+|    +-- <documentations files (coverage reports, unit tests results, etc)>
 |  +-- inc
-|  +-- lib
+|    +-- <header files>
 |  +-- src
+|    +-- <source files>
 |  +-- test
+|    +-- <test files>
 |  +-- makefile
 |  +-- readme.md
+```
 
 ## Compiling and executing tests
+
+### Clean compiled files
+
+Do this first: 
+
+```bash
+make clean
+```
+
+### Compiling with tests
+
+In the projects root folder, run command:
+
+```bash
+make check
+```
+
+This will generate a bunch of different outputs:
+
+* Console: the tests result and the code coverage will be shown in the console.
+* /doc/tests.txt: tests result
+* /doc/coverageReport/index.html: open this file with a web browser to navigate the coverage report
 
 ### Compiling without tests
 
@@ -48,29 +83,7 @@ cd bin
 ./main
 ```
 
-This program is just a dummy main function which calls some of the functions, it has no practical use, except being an empty shell to build future programs.
-
-### Compiling with tests
-
-In the projects root folder, run command:
-
-```bash
-make check
-```
-
-This will generate a bunch of different outputs:
-
-* Console: the tests result and the code coverage will be shown in the console.
-* /doc/tests.txt: tests result
-* /doc/coverageReport/index.html: open this file with a web browser to navigate the coverage report
-
-### Clean compiled files
-
-Just run: 
-
-```bash
-make clean
-```
+This program is just a dummy main which calls some of the functions, it has no practical use except being an empty shell to build future programs.
 
 ## VS Code integration
 
