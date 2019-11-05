@@ -9,7 +9,8 @@ jobs:
 
       - run:
           name: test
-          command: make check
+          command: apt-get install libcunit1 libcunit1-doc libcunit1-dev
+            make check
 
       - run:
           name: build
