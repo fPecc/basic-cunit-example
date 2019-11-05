@@ -8,9 +8,9 @@ jobs:
       - checkout
 
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: test
+          command: make check
 
       - run:
-          name: Print the Current Time
-          command: date
+          name: build
+          command: make
