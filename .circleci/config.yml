@@ -9,7 +9,16 @@ jobs:
 
       - run:
           name: test
-          command: sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev |
+          command: curl https://sourceforge.net/projects/cunit/files/CUnit/2.1-3/CUnit-2.1-3.tar.bz2/download |
+            sudo apt-get install libcunit1 libcunit1-doc libcunit1-dev |
+            tar xjf CUnit-2.1-3-src.tar.bz2 |
+            cd CUnit-2.1.3 |
+            mkdir -p $HOME/local |
+            ./configure --prefix=$HOME/local |
+            make clean |
+            make |
+            make install |
+            cd .. |
             mkdir bin |
             make check
 
