@@ -9,7 +9,7 @@
  * 
  */
 
-#include "CUnit/Basic.h"
+#include "CUnit/CUnit.h"
 #include "../inc/functions_test.h"
 
 #define UNITTEST true

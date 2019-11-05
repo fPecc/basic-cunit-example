@@ -9,7 +9,7 @@
  * 
  */
 
-#include "CUnit/Basic.h"
+#include "CUnit/CUnit.h"
 #include "../inc/functions.h"
 
 // The following line starts a block of code which will not be taken into account for the coverage report
